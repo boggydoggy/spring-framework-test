@@ -6,13 +6,17 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import spring.di.entity.Exam;
 
 public class GridExamConsole implements ExamConsole {
+//	@Autowired
+//	@Qualifier("exam2")
 	private Exam exam;
 	
 	public GridExamConsole() {
-		
+		System.out.println("Basic Constructor");
 	}
 
-	public GridExamConsole(Exam exam) {
+//	@Autowired
+	public GridExamConsole(/* @Qualifier("exam2") */Exam exam) {
+		System.out.println("Custom Constructor");
 		this.exam = exam;
 	}
 
@@ -29,6 +33,7 @@ public class GridExamConsole implements ExamConsole {
 	@Qualifier("exam2")
 	@Override
 	public void setExam(Exam exam) {
+		System.out.println("Setter");
 		this.exam = exam;
 	}
 
