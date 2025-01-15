@@ -1,12 +1,14 @@
 package spring.di;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import spring.di.entity.*;
+import spring.di.entity.Exam;
+import spring.di.entity.NewlecExam;
 import spring.di.ui.ExamConsole;
-import spring.di.ui.GridExamConsole;
-import spring.di.ui.InlineExamConsole;
 
 public class Program {
 
@@ -20,8 +22,16 @@ public class Program {
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring/di/settings.xml");
 		
 //		ExamConsole console = (ExamConsole) context.getBean("console");
-		ExamConsole console = (ExamConsole) context.getBean(ExamConsole.class);
+		ExamConsole console = context.getBean(ExamConsole.class);
 		console.print();
+		
+//		List<Exam> exams = new ArrayList<>();
+		List<Exam> exams = (List<Exam>) context.getBean("exams");
+//		exams.add(new NewlecExam(30,30,30,30));
+		
+		for (Exam e: exams) {
+			System.out.println(e);
+		}
 	}
 
 }
