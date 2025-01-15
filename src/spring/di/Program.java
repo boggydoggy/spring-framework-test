@@ -26,12 +26,12 @@ public class Program {
 		console.print();
 		
 //		List<Exam> exams = new ArrayList<>();
-		List<Exam> exams = (List<Exam>) context.getBean("exams");
+//		List<Exam> exams = (List<Exam>) context.getBean("exams");
 //		exams.add(new NewlecExam(30,30,30,30));
 		
-		for (Exam e: exams) {
-			System.out.println(e);
-		}
+//		for (Exam e: exams) {
+//			System.out.println(e);
+//		}
 	}
 
 }
