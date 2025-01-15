@@ -17,10 +17,12 @@
 		<property name="math" value="30"/>
 		<property name="com" value="40"/> -->
 		<constructor-arg name="kor" value="10"/>
-		<constructor-arg name="eng" value="20"/>
-		<constructor-arg name="math" value="30"/>
-		<constructor-arg name="com" value="40"/>
+		<constructor-arg name="eng" value="10"/>
+		<constructor-arg name="math" value="10"/>
+		<constructor-arg name="com" value="10"/>
 	</bean>
+	<bean id="exam2" class="spring.di.entity.NewlecExam" p:kor="10" p:eng="20" p:math="30" p:com="40" />
+	<bean id="exam3" class="spring.di.entity.NewlecExam" p:kor="20" p:eng="30" p:math="40" p:com="50" />
 	<!--  ExamConsole console = new GridExamConsole() -->
 	<bean id="console" class="spring.di.ui.GridExamConsole">
 		<!-- console.setExam(exam) -->
