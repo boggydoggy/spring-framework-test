@@ -10,7 +10,7 @@
 	<context:component-scan base-package="spring.di.ui, spring.di.entity"/>
 	<!-- <context:annotation-config /> -->
 	<!-- [Exam exam = new NewlecExam();] -->
-	<!-- <bean id="exam" class="spring.di.entity.NewlecExam" p:kor="10" p:eng="20" p:math="30" p:com="40" /> -->
+	<bean id="exam" class="spring.di.entity.NewlecExam" p:kor="10" p:eng="20" p:math="30" p:com="40" />
 	<!-- <bean id="exam" class="spring.di.entity.NewlecExam"> -->
 		<!-- <property name="kor" value="10"/>
 		<property name="eng" value="20"/>
@@ -39,10 +39,10 @@
 		</constructor-arg>
 	</bean> -->
 	
-	<util:list id="exams" list-class="java.util.ArrayList">
+	<!-- <util:list id="exams" list-class="java.util.ArrayList">
 		<bean class="spring.di.entity.NewlecExam" p:kor="20" p:eng="20" p:math="40" p:com="40"/>
-		<!-- exams.add(new NewlecExam(30,30,30,30)); -->
-		<!-- <ref bean="exam"/> -->
-	</util:list>
+		exams.add(new NewlecExam(30,30,30,30));
+		<ref bean="exam"/>
+	</util:list> -->
 
 </beans>
