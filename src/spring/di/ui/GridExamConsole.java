@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 
 import spring.di.entity.Exam;
 
+// @Component("console")
 public class GridExamConsole implements ExamConsole {
 //	@Autowired
 //	@Qualifier("exam2")

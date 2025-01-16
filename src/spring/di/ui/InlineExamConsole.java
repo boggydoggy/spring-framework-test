@@ -1,18 +1,21 @@
 package spring.di.ui;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 import spring.di.entity.Exam;
 
+// @Component("console")
+@Component
 public class InlineExamConsole implements ExamConsole {
 	private Exam exam;
 	
 	public InlineExamConsole() {
-		
+		System.out.println("Basic Constructor");
 	}
 	
 	public InlineExamConsole(Exam exam) {
+		System.out.println("Custom Constructor");
 		this.exam = exam;
 	}
 
@@ -24,6 +27,7 @@ public class InlineExamConsole implements ExamConsole {
 	@Autowired
 	@Override
 	public void setExam(Exam exam) {
+		System.out.println("Setter");
 		this.exam = exam;
 	}
 
