@@ -6,6 +6,7 @@ public class NewlecExam implements Exam {
 	private int eng;
 	private int math;
 	private int com;
+	private int numOfSubjects;
 
 	public NewlecExam() {
 		
@@ -50,9 +51,16 @@ public class NewlecExam implements Exam {
 		this.com = com;
 	}
 
+	public int getNumOfSubjects() {
+		return numOfSubjects;
+	}
+
+	public void setNumOfSubjects(int numOfSubjects) {
+		this.numOfSubjects = numOfSubjects;
+	}
+
 	@Override
 	public int total() {
-
 		int result = kor+eng+math+com;
 
 		return result;
@@ -61,8 +69,13 @@ public class NewlecExam implements Exam {
 	@Override
 	public float average() {
 //		long startTime = System.currentTimeMillis();
-//		
-		float result = total()/4.0f;
+		
+		if (numOfSubjects <= 0) {
+			throw new IllegalArgumentException("Number of Subjects Out of Range");
+		}
+		
+		float result = total() / numOfSubjects;
+		
 //		
 //		try {
 //			Thread.sleep(500);

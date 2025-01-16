@@ -8,7 +8,7 @@ public class LogAroundAdvice implements MethodInterceptor{
 	@Override
 	public Object invoke(MethodInvocation invocation) throws Throwable {
 		long startTime = System.currentTimeMillis();
-		
+		System.out.println("===Start===");
 		Object result = invocation.proceed();
 		
 		try {
@@ -19,7 +19,8 @@ public class LogAroundAdvice implements MethodInterceptor{
 		
 		long endTime = System.currentTimeMillis();
 		
-		System.out.println("End, total " + (endTime - startTime) + " ms passed");
+		System.out.println("===End===");
+		System.out.println("Total " + (endTime - startTime) + " ms passed");
 		return result;
 	}
 

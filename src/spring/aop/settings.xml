@@ -8,13 +8,19 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 
-	<bean id="targetExam" class="spring.aop.entity.NewlecExam" p:kor="11" p:eng="22" p:math="33" p:com="44" />
+	<bean id="targetExam" class="spring.aop.entity.NewlecExam" p:kor="11" p:eng="22" p:math="33" p:com="44" p:numOfSubjects="0" />
 	<bean id="logAroundAdvice" class="spring.aop.advice.LogAroundAdvice"/>
+	<bean id="logBeforeAdvice" class="spring.aop.advice.LogBeforeAdvice"/>
+	<bean id="logAfterAdvice" class="spring.aop.advice.LogAfterAdvice"/>
+	<bean id="logThrowingAdvice" class="spring.aop.advice.LogThrowingAdvice"/>
 	<bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
 		<property name="target" ref="targetExam" />
 		<property name="interceptorNames">
 			<list>
 				<value>logAroundAdvice</value>
+				<value>logBeforeAdvice</value>
+				<value>logAfterAdvice</value>
+				<value>logThrowingAdvice</value>
 			</list>
 		</property>
 	</bean>
