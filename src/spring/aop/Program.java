@@ -14,7 +14,6 @@ public class Program {
 
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring/aop/settings.xml");
-		
 		/*
 		 * Exam exam = new NewlecExam(1, 1, 1, 1); Exam examProxy = (Exam)
 		 * Proxy.newProxyInstance(NewlecExam.class.getClassLoader(), new Class[]
